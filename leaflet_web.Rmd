@@ -1,0 +1,26 @@
+---
+title: "Leaflet"
+author: "DC"
+date: "January 29, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document with a leaflet map.
+
+```{r echo=FALSE}
+library(leaflet)
+df <- data.frame(lat = runif(5, min = 26.0, max = 34.8),
+                 lng = runif(5, min = -106.3, max = -93.3))
+
+df %>%
+    leaflet() %>%
+    addTiles() %>%
+    addMarkers()
+```
+
